@@ -4,7 +4,7 @@ Migration Steps
 - Install VSCode & Docker extension: https://code.visualstudio.com/download
 - Pull code from repository
 - Change image tag to ticket id
-- Run `docker compose up`
+- Run `docker compose up -d`
 - Open `app` container in terminal
 - Run `php artisan start —clean-db —clean-data —folder-url={drive_link}`
     - —clean-db: delete mysql database
