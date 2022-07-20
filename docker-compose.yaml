@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  app:
+      container_name: app
+      # Change this to ticket ID
+      image: datjackson1997666/migration-data:284
+      env_file: ./.env
+      restart: "no"
+      networks:
+        - migration
+      depends_on:
+        db:
+          condition: service_healthy
+      links:
+        - db
+  db:
+      container_name: mysql
+      image: mysql:5.7
+      networks:
+        - migration
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_DATABASE: migration
+        MYSQL_USER: migration
+        MYSQL_PASSWORD: 1
+        MYSQL_ROOT_PASSWORD: 1
+      healthcheck:
+        test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+        timeout: 20s
+        retries: 10
+networks:
+  migration:
+    driver: bridge
