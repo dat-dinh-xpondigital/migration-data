@@ -3,7 +3,7 @@ Migration Steps
 - Install Docker: https://docs.docker.com/desktop/install/windows-install/
 - Install VSCode & Docker extension: https://code.visualstudio.com/download
 - Pull code from repository
-- Change image tag to ticket id
+- Change image tag to `ticket-id` or ask developer for image
 - Run `docker compose up -d`
 - Open `app` container in terminal
 - Run `php artisan start:qa`
