@@ -6,12 +6,7 @@ Migration Steps
 - Change image tag to ticket id
 - Run `docker compose up -d`
 - Open `app` container in terminal
-- Run `php artisan start —-clean-db —-clean-data —-folder-url={drive_link}`
-    - `—-clean-db`: delete mysql database
-    - `—-clean-data`: delete data files
-    - `—-folder-url`: link to gg drive
-    - `—-clean-entry`: delete entries content stack
-    - `—-clean-asset`: delete assets content stack
+- Run `php artisan start:qa`
 - If ask for google access token:
     - Open link in terminal
     - Authorize app
